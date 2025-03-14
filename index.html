@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    
+    <h1>Rock Paper Scissors</h1>
+    <div class="game" style="margin-bottom: 20px;">
+        <button onclick="PlayerMove('Rock')" class="move-button">
+            <img src="img/Rock-emoji.png" class="move-icon">
+        </button>
+        <button onclick="PlayerMove('Paper')" class="move-button">
+            <img src="img/Paper-emoji.png"  class="move-icon">
+        </button>
+        <button onclick="PlayerMove('Scissors')" class="move-button">
+            <img src="img/Scissors-emoji.png" class="move-icon" >
+        </button>
+    </div>
+    <div class="screen">
+        <div class="PlayerMove"></div>
+        <div class="ComputerMove"></div>
+        <div class="result"></div>
+    </div>
+
+    <div class="score" >
+        <p class="Wins">Wins :</p>
+        <p class="Losses">Losses :</p>
+        <p class="Ties">Ties :</p>
+    </div>
+    <button class="ResetButton btn" onclick="ResetScore()">Reset Score</button>
+    <!-- <button onclick="Loop()">Random x100</button> -->
+    
+
+
+
+<script src="script/main.js"></script>
+</body>
+</html>
