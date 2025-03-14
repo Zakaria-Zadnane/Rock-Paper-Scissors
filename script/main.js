@@ -14,9 +14,6 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     losses : 0 ,
     ties : 0
 } ;
-instantScreen()
-instantScore()
-
 // if (!score) 
 //     {
 //         score = {
@@ -25,6 +22,10 @@ instantScore()
 //             ties : 0
 //         }
 //     }
+instantScreen()
+instantScore()
+
+
 
 function Loop()
 {
