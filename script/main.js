@@ -112,17 +112,14 @@ function PlayerMove(playerMove)
             {
                 score.wins++
             }else if(result === 'Lose')
-                {
-                    score.losses++
-                }else
-                {
-                    score.ties++
-                }
+            {
+                score.losses++
+            }else
+            {
+                score.ties++
+            }
 
     localStorage.setItem('score', JSON.stringify(score));      
-
-    // alert(`You Chose ${playerMove} and Computer Chose ${ComputerMove}\n You : ${result}  !!
-    //         Wins : ${score.wins} ,  Losses : ${score.losses} , Ties : ${score.ties}`);
     screen.style.display ='block';
     Player.innerHTML = `Your Move is : <img src="img/${playerMove}-emoji.png" class="move-icon">`;
     Computer.innerHTML = `And Computer Move is : <img src="img/${ComputerMove}-emoji.png" class="move-icon">`;
