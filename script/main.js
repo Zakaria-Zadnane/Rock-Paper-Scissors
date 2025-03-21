@@ -8,6 +8,7 @@ const Computer = document.querySelector('.ComputerMove');
 const res = document.querySelector('.result');
 const screen = document.querySelector('.screen');
 const ResetButton = document.querySelector('.ResetButton');
+const autoPlayButton = document.querySelector('.autoPlay');
 
 let score = JSON.parse(localStorage.getItem('score')) || {
     wins : 0 ,
@@ -30,15 +31,7 @@ instantScore()
 function Loop()
 {
     for (let index = 0; index < 100; index++) {
-            if (index <= 3 ) {
-                playerMove = 'Scissors'
-            }else if(index <= 6)
-            {
-                playerMove = 'Paper'
-            }else
-            {
-                playerMove = 'Rock'
-            }
+        let playerMove = Random()
         PlayerMove(playerMove)
         
     }
@@ -55,6 +48,31 @@ function ResetScore()
     res.innerHTML = '';
     instantScreen()
 }
+
+let isAutoPlaying = false ;
+let Interval ;
+
+function autoPlay()
+{
+    if(!isAutoPlaying)
+    {
+        Interval = setInterval(function()
+        {
+            const playerMove = Random();
+            PlayerMove(playerMove);
+            
+        }, 1000)
+        isAutoPlaying = true ;
+        autoPlayButton.innerHTML = 'Stop ■';
+
+    }else
+    {
+        clearInterval(Interval)
+        isAutoPlaying = false ;
+        autoPlayButton.innerHTML = 'Auto Play ▶';
+    }
+}
+
 
 function Random()
 {
