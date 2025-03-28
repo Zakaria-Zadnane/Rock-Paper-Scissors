@@ -56,7 +56,7 @@ function autoPlay()
 {
     if(!isAutoPlaying)
     {
-        Interval = setInterval(function()
+        Interval = setInterval(() =>
         {
             const playerMove = Random();
             PlayerMove(playerMove);
