@@ -10,6 +10,10 @@ const screen = document.querySelector('.screen');
 const ResetButton = document.querySelector('.ResetButton');
 const autoPlayButton = document.querySelector('.autoPlay');
 
+const rockButton = document.querySelector('.js-button-rock');
+const papperButton = document.querySelector('.js-button-papper');
+const scissorsButton = document.querySelector('.js-button-scissors');
+
 let score = JSON.parse(localStorage.getItem('score')) || {
     wins : 0 ,
     losses : 0 ,
@@ -92,6 +96,35 @@ function Random()
         } 
     return ComputerMove;
 }
+
+rockButton.addEventListener('click', ()=>
+    {
+        PlayerMove('Rock');
+    })
+papperButton.addEventListener('click', ()=>
+    {
+        PlayerMove('Paper');
+    })
+scissorsButton.addEventListener('click', ()=>
+    {
+        PlayerMove('Scissors');
+    })
+
+document.body.addEventListener('keydown', ()=>
+    {
+        if(event.key === 'r')
+            {
+                PlayerMove('Rock');
+            }
+        if(event.key === 'p')
+            {
+                PlayerMove('Paper');
+            }
+        if(event.key === 's')
+            {
+                PlayerMove('Scissors');
+            }
+    })
 
 
 function PlayerMove(playerMove)
