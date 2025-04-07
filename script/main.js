@@ -14,6 +14,10 @@ const rockButton = document.querySelector('.js-button-rock');
 const papperButton = document.querySelector('.js-button-papper');
 const scissorsButton = document.querySelector('.js-button-scissors');
 
+
+
+
+
 let score = JSON.parse(localStorage.getItem('score')) || {
     wins : 0 ,
     losses : 0 ,
@@ -40,6 +44,42 @@ function Loop()
         
     }
 }
+
+const infoButtoon = document.querySelector('.info')
+const block = document.querySelector('.block')
+const overlay = document.querySelector('.overlay')
+    infoButtoon.addEventListener('click', () =>
+        {
+            block.style.display = 'block'
+            overlay.style.display = 'block'
+        });
+    overlay.addEventListener('click', () => {
+        block.style.display = 'none';
+        overlay.style.display = 'none';
+        confirmReset.style.display = 'none'
+
+    });
+
+const confirmReset = document.querySelector('.confirmReset')
+const positiveConfirm = document.querySelector('.positiveConfirm')
+const nigtiveConfirm = document.querySelector('.nigtiveConfirm')
+
+ResetButton.addEventListener('click', () =>
+    {
+        confirmReset.style.display = 'block'
+        overlay.style.display = 'block'
+    })
+    positiveConfirm.addEventListener('click', () =>
+        {
+            ResetScore();
+            confirmReset.style.display = 'none'
+            overlay.style.display = 'none'
+        })
+    nigtiveConfirm.addEventListener('click', () =>
+        {
+            confirmReset.style.display = 'none'
+            overlay.style.display = 'none'
+        })
 function ResetScore()
 {
     score.wins = 0,
@@ -124,8 +164,20 @@ document.body.addEventListener('keydown', ()=>
             {
                 PlayerMove('Scissors');
             }
+        if(event.key === 'a')
+            {
+                autoPlay()
+            }
+        if(event.key === 'Backspace')
+            {
+                confirmReset.style.display = 'block'
+                overlay.style.display = 'block'
+            }
+        // console.log(event.key)
     })
 
+
+    
 
 function PlayerMove(playerMove)
 {
@@ -198,6 +250,7 @@ function instantScreen()
         ResetButton.style.display = 'block';
     }
 }
+
 
 
 

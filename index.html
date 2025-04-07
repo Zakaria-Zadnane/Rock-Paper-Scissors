@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/game.png" type="image/x-icon">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -32,8 +33,28 @@
         <p class="Losses">Losses :</p>
         <p class="Ties">Ties :</p>
     </div>
-    <button class="ResetButton btn" onclick="ResetScore()">Reset Score</button>
+    <button class="ResetButton btn">Reset Score</button>
     <button class="autoPlay btn" onclick="autoPlay()">Auto Play ▶</button>
+    <div class="confirmReset">
+        <p>Are u sure u want to Reset the Score ?</p>
+        <button class="positiveConfirm Confirmbtn">Yes</button>
+        <button class="nigtiveConfirm Confirmbtn">No</button>
+    </div>
+    <button  class="info">
+        <img src="img/warning.png" class="move-icon">
+    </button>
+    <div class="block">
+        <h2 style="font-size: 24px; margin-bottom: 10px;">How to Play</h2>
+        <ul style="line-height: 1.6; padding-left: 20px;">
+            <li>Click on the icons to chose your move.</li>
+            <li>You can press button 'R' for <b style="color: yellow;">Rock</b> in the keyboard.</li>
+            <li>You can press button 'P' for <b style="color: yellow;">Paper</b> in the keyboard.</li>
+            <li>You can press button 'S' for <b style="color: yellow;">Scissors</b> in the keyboard.</li>
+            <li>You can toggle the button 'A' for <b style="color: yellow;">autoPlay</b> in the keyboard.</li>
+            <li>You can press the button 'Backspace' for <b style="color: yellow;">Reset the Score</b> in the keyboard.</li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
     <!-- <button class="btn" onclick="Loop()">Random x100</button> -->
     
 
