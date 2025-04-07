@@ -189,6 +189,10 @@ document.body.addEventListener('keydown', (event) => {
         case 'a':
             autoPlay();
             break;
+        case 'i':
+            block.style.display = 'block'
+            overlay.style.display = 'block'
+            break;
         case 'Backspace':
             confirmReset.style.display = 'block';
             overlay.style.display = 'block';
