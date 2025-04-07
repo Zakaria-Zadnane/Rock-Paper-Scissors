@@ -150,31 +150,53 @@ scissorsButton.addEventListener('click', ()=>
         PlayerMove('Scissors');
     })
 
-document.body.addEventListener('keydown', ()=>
-    {
-        if(event.key === 'r')
-            {
-                PlayerMove('Rock');
-            }
-        if(event.key === 'p')
-            {
-                PlayerMove('Paper');
-            }
-        if(event.key === 's')
-            {
-                PlayerMove('Scissors');
-            }
-        if(event.key === 'a')
-            {
-                autoPlay()
-            }
-        if(event.key === 'Backspace')
-            {
-                confirmReset.style.display = 'block'
-                overlay.style.display = 'block'
-            }
-        // console.log(event.key)
-    })
+// document.body.addEventListener('keydown', (event)=>
+//     {
+//         if(event.key === 'r')
+//             {
+//                 PlayerMove('Rock');
+//             }
+//         if(event.key === 'p')
+//             {
+//                 PlayerMove('Paper');
+//             }
+//         if(event.key === 's')
+//             {
+//                 PlayerMove('Scissors');
+//             }
+//         if(event.key === 'a')
+//             {
+//                 autoPlay()
+//             }
+//         if(event.key === 'Backspace')
+//             {
+//                 confirmReset.style.display = 'block'
+//                 overlay.style.display = 'block'
+//             }
+//         // console.log(event.key)
+//     })
+document.body.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'r':
+            PlayerMove('Rock');
+            break;
+        case 'p':
+            PlayerMove('Paper');
+            break;
+        case 's':
+            PlayerMove('Scissors');
+            break;
+        case 'a':
+            autoPlay();
+            break;
+        case 'Backspace':
+            confirmReset.style.display = 'block';
+            overlay.style.display = 'block';
+            break;
+        // default:
+        //     console.log(event.key); // For debugging
+    }
+});
 
 
     
